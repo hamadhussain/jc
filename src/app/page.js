@@ -1,101 +1,100 @@
 import Image from "next/image";
-
+import Page from './Client/Home/page'
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.js
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+  <>
+  <Page/>
+  {/* <div className="App">
+      <div className="banner1">
+        <nav className="navbar">
+          <h1>Navbar</h1>
+        </nav>
+      </div>
+      <div className="content">
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
+          dignissim, eros a dictum tincidunt, mauris nunc aliquet arcu, et
+          pretium libero lectus in ipsum. Vestibulum vestibulum ligula et
+          massa gravida, id euismod libero elementum. Integer tincidunt
+          malesuada venenatis. Suspendisse potenti. Fusce efficitur turpis
+          velit, vel condimentum ligula dictum eu. Phasellus at felis
+          condimentum, laoreet velit et, sodales lorem. Donec ut venenatis
+          orci. Ut non urna nec odio dapibus venenatis. In hac habitasse
+          platea dictumst. Sed in velit sed libero gravida malesuada nec ac
+          quam. Integer interdum auctor neque, sed luctus eros iaculis
+          vel. Proin vitae libero nisi. Curabitur lacinia tempor velit,
+          vitae tristique dolor fermentum sed. Sed dictum nunc et tortor
+          malesuada, id aliquet purus fringilla. Suspendisse sed quam
+          dapibus, cursus orci ac, facilisis purus. Nam at cursus elit. In
+          consectetur, erat a cursus aliquet, sem odio bibendum sem, sed
+          vehicula risus libero sit amet sem. Vestibulum in velit urna.
+          Praesent aliquam interdum diam, in vestibulum libero bibendum
+          sit amet. Nam a mauris at nunc bibendum tempus. Suspendisse
+          convallis, ligula in ultrices pharetra, est metus venenatis
+          nulla, id viverra quam eros ac odio. Integer posuere ipsum ut
+          urna vehicula, at hendrerit eros suscipit. Vivamus fringilla
+          bibendum odio et lacinia. Nam ac tortor venenatis, dignissim
+          tellus non, gravida lectus. Aenean quis ipsum consectetur, ultrices
+          lacus nec, malesuada odio. In tempor libero sed turpis laoreet,
+          non congue urna malesuada. Nullam et ipsum at nisi feugiat
+          lobortis sed et nulla. Suspendisse potenti. Donec pharetra tortor
+          at nibh vehicula, vel suscipit justo aliquam. Ut iaculis odio
+          vel nulla convallis, vel tempor justo consectetur. Donec
+          efficitur turpis non volutpat cursus. Donec auctor urna id orci
+          feugiat, in aliquet metus sagittis. Nulla facilisi. Suspendisse
+          vehicula nibh at sapien cursus vestibulum. Sed auctor ex
+          vestibulum, hendrerit felis vel, blandit metus. Sed vehicula
+          neque vel tincidunt viverra. Sed facilisis urna ac nibh dignissim
+          consequat. Curabitur sed sem eu felis lacinia tristique sed sit
+          amet ante. Nullam nec libero et felis tincidunt congue. Vivamus
+          aliquam euismod orci, at laoreet magna gravida nec. Donec et
+          arcu venenatis, feugiat odio sit amet, sollicitudin purus. Proin
+          id cursus ante. Etiam sit amet dapibus eros. Integer a pharetra
+          ligula, nec ornare nisl. Nullam euismod, elit non tempor cursus,
+          lacus lacus gravida ex, nec feugiat felis est eu risus.
+          Pellentesque at justo nec erat pretium pharetra at ac magna.
+          Donec sagittis nisi vel felis cursus, ac vestibulum dolor
+          cursus. Duis tincidunt, nunc nec tincidunt vulputate, turpis
+          ex fermentum eros, id luctus turpis sem in ligula. Nam venenatis
+          dolor at orci condimentum, id tincidunt magna pretium. Nam a
+          tellus in lorem varius fermentum. Vivamus scelerisque enim ac
+          lorem hendrerit, nec fermentum elit ultrices. Nullam sit amet
+          interdum justo. Curabitur non sapien non purus ultrices tempor.
+          Morbi tincidunt sem vel nisi pharetra, vel ultrices lectus
+          fringilla. Integer nec lorem nec lorem commodo faucibus et nec
+          libero. Suspendisse ut ex tristique, blandit lorem non, egestas
+          ipsum. Mauris id quam risus. Curabitur malesuada sagittis
+          hendrerit. Phasellus laoreet turpis in velit fringilla, et
+          molestie lectus condimentum. Donec suscipit orci urna, vel
+          pellentesque eros gravida ac. Sed cursus velit eu urna blandit,
+          non consectetur elit fermentum. Fusce laoreet odio nec justo
+          cursus feugiat. Praesent a mi sed nisi posuere tempor ut nec
+          turpis. Integer posuere risus id risus congue gravida. Proin
+          fermentum justo a quam sollicitudin tempus. Duis auctor magna
+          quis augue rhoncus, non elementum justo ornare. Vestibulum
+          auctor, mi id laoreet vestibulum, est lorem tempor augue, eu
+          convallis ligula lorem a odio. Vestibulum vehicula metus quis
+          justo tincidunt, et bibendum ex interdum. Phasellus vitae nisi
+          eget nisl consectetur lacinia. Nulla facilisi. Sed efficitur
+          mauris quis nulla aliquam vestibulum. Integer ut sapien eget
+          augue egestas tempor. Sed ac libero vitae velit dapibus blandit.
+          Integer ultricies felis et est tristique, nec ultricies magna
+          vestibulum. Nulla facilisi. Praesent euismod, lacus ut varius
+          euismod, felis tortor efficitur lacus, id lacinia nunc augue non
+          mauris. Nam tristique tellus nec dui pellentesque luctus. Donec
+          convallis auctor felis at ultrices. Donec bibendum sem ut metus
+          laoreet, id pellentesque nisi tincidunt. Vestibulum non urna
+          magna. Aliquam erat volutpat. Ut ac lorem vel magna tincidunt
+          suscipit eget ut nisi. Cras sit amet quam nec lectus egestas
+          egestas vel ut sapien. Suspendisse dignissim justo vitae purus
+          tincidunt laoreet. Donec consectetur massa quis nisi tincidunt
+          tempor. Nulla facilisi. Nullam dignissim orci a odio ullamcorper
+          vestibulum. Ut at sapien ac ex aliquam eleifend. Suspendisse
+          potenti.
+        </p>
+      </div>
+      <div className="banner2"></div>
+    </div> */}
+  </>
   );
 }
