@@ -335,8 +335,8 @@ const Footer = () => {
   </div>
 </section>
 
-      <footer className="bg-white text-gray-700 border-t border-gray-200 py-10">
-        <div className="container mx-auto px-4 flex flex-col items-center">
+      <footer className="bg-white text-gray-700  w- border-gray-200 py-10">
+        <div className="  px-4 flex flex-col items-center">
           <div className="text-2xl font-semibold mb-4">
             <a href="/" className="hover:text-gray-900">
               LeatherJackets

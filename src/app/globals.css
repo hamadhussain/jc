@@ -76,11 +76,11 @@ h1,button{
   padding: 0;
   height: 100vh;
   background-image: url("/front2.jpg");
-  background-position: right;
   background-repeat: no-repeat;
   background-size: cover;
   /* font-family: Arial, sans-serif; */
   background-attachment: fixed;
+  background-position: center;
   
 }
 

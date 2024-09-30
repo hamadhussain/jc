@@ -11,12 +11,14 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet"
+import { MdOutlineShoppingCart } from "react-icons/md";
 
 export default function SheetDemo() {
   return (
     <Sheet >
       <SheetTrigger asChild>
-        <Button variant="outline" className=" text-black">Open</Button>
+      <Button variant="outline" className="text-white border-none hover:text-white bg-transparent hover:bg-transparent text-3xl">
+    <MdOutlineShoppingCart/>  </Button>
       </SheetTrigger>
       <SheetContent>
         <SheetHeader>

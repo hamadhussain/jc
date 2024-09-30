@@ -61,7 +61,7 @@
 
 
 import { Button } from "@/components/ui/button";
-import { FaCashRegister, FaPaypal, FaCreditCard, FaApple, FaGooglePay, FaBank } from "react-icons/fa";
+import { FaCashRegister, FaPaypal, FaCreditCard, FaApple, FaGooglePay } from "react-icons/fa";
 
 const paymentMethods = [
   {
@@ -99,13 +99,13 @@ const paymentMethods = [
     description: "Pay easily with Google Pay.",
     buttonClass: "bg-blue-600 text-white hover:bg-blue-700",
   },
-  {
-    id: 6,
-    icon: <FaBank className="text-5xl mb-4 text-gray-700" />,
-    title: "Bank Transfer",
-    description: "Transfer funds directly from your bank.",
-    buttonClass: "bg-gray-700 text-white hover:bg-gray-800",
-  },
+  // {
+  //   id: 6,
+  //   icon: <FaBank className="text-5xl mb-4 text-gray-700" />,
+  //   title: "Bank Transfer",
+  //   description: "Transfer funds directly from your bank.",
+  //   buttonClass: "bg-gray-700 text-white hover:bg-gray-800",
+  // },
 ];
 
 export default function PaymentMethods() {

@@ -56,7 +56,7 @@ export default function Home() {
     name.toLowerCase().includes(inputValue.toLowerCase())
   );
   return (
-    <div className=" overflow-hidden">
+    <div className=" overflo-hidden">
       {/* <div className="body  ">
         <div
           className={`absolute inset-0 bg-black transition-all duration-700 ${
@@ -197,7 +197,9 @@ export default function Home() {
               <GiSleevelessJacket className="border-4 rounded-full" />
               <p className="companylogo italic">M.J</p>
             </div>
-            <Menu />
+            <div className=" flex items-center gap-4">
+            <SheetDemo/>
+            <Menu /></div>
           </header>
         </div>
 
