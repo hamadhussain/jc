@@ -35,7 +35,7 @@ import Link from "next/link";
 
 const Header = () => (
   <div className="h-screen text-white flex flex-col brightness-200 relative px-4 md:px-36 space-y-4 items-center justify-center">
-    <h1 className="text-4xl md:text-6xl font-bold mb-4 leading-relaxed text-center">
+    <h1 className="text-4xl md:text-7xl font-bold mb-4 leading-relaxed text-center">
       Raining Offers For Winter!
     </h1>
     <p className="text-2xl md:text-3xl mb-4 text-center">25% Off On All Products</p>

@@ -1,15 +1,24 @@
 import ProductCard from "./Product/page";
 
 const product = [
-  { id: 'jacket1', title: "Cool Gadget", price: "$234.56" },
-  { id: 'jacket2', title: "Stylish Watch", price: "$123.45" },
-  { id: 'jacket3', title: "Amazing Headphones", price: "$89.99" },
-  { id: 'jacket4', title: "Innovative Laptop", price: "$450.23" },
-  { id: 'jacket5', title: "Durable Backpack", price: "$305.67" },
-  { id: 'jacket6', title: "Smartphone Pro", price: "$98.76" },
-  { id: 'jacket7', title: "High-Quality Camera", price: "$299.99" },
-  { id: 'jacket8', title: "Wireless Mouse", price: "$175.50" },
-  { id: 'jacket9', title: "Portable Charger", price: "$30.00" },
+  { id: 1, title: "Cool Gadget",src:"Jacket", price: "$234.56", linkname: "Client/Shop/Jackets/Jacket" },
+  { id: 2, title: "Stylish Watch",src:"Jacket", price: "$123.45", linkname: "Client/Shop/Jackets/Jacket" },
+  { id: 3, title: "Amazing Headphones",src:"Jacket", price: "$89.99", linkname: "Client/Shop/Jackets/Jacket" },
+  { id: 4, title: "Innovative Laptop",src:"Jacket", price: "$450.23", linkname: "Client/Shop/Jackets/Jacket" },
+  { id: 5, title: "Durable Backpack",src:"Jacket", price: "$305.67", linkname: "Client/Shop/Jackets/Jacket" },
+  { id: 6, title: "Smartphone Pro",src:"Jacket", price: "$98.76", linkname: "Client/Shop/Jackets/Jacket" },
+  { id: 7, title: "High-Quality Camera",src:"Jacket", price: "$299.99", linkname: "Client/Shop/Jackets/Jacket" },
+  { id: 8, title: "Wireless Mouse",src:"Jacket", price: "$175.50", linkname: "Client/Shop/Jackets/Jacket" },
+  { id: 9, title: "Portable Charger",src:"Jacket", price: "$30.00", linkname: "Client/Shop/Jackets/Jacket" },
+{ id: '1', title: "Cool Gadget",src:"Hoody", price: "$234.56",linkname:"Client/Shop/Hoodies/Hoody"},
+{ id: '2', title: "Stylish Watch",src:"Hoody", price: "$123.45" ,linkname:"Client/Shop/Hoodies/Hoody"},
+{ id: '3', title: "Amazing Headphones",src:"Hoody", price: "$89.99",linkname:"Client/Shop/Hoodies/Hoody" },
+{ id: '4', title: "Innovative Laptop",src:"Hoody", price: "$450.23",linkname:"Client/Shop/Hoodies/Hoody" },
+{ id: '5', title: "Durable Backpack",src:"Hoody", price: "$305.67",linkname:"Client/Shop/Hoodies/Hoody" },
+{ id: '6', title: "Smartphone Pro",src:"Hoody", price: "$98.76",linkname:"Client/Shop/Hoodies/Hoody" },
+{ id: '7', title: "High-Quality Camera",src:"Hoody", price: "$299.99" ,linkname:"Client/Shop/Hoodies/Hoody"},
+{ id: '8', title: "Wireless Mouse",src:"Hoody", price: "$175.50",linkname:"Client/Shop/Hoodies/Hoody" },
+{ id: '9',  title: "Portable Charger",src:"Hoody", price: "$30.00" ,linkname:"Client/Shop/Hoodies/Hoody"},
 ];
 
 const FeaturedCollections = () => (
@@ -23,8 +32,8 @@ const FeaturedCollections = () => (
           <ProductCard
             price={product.price}
             title={product.title}
-            src={product.id}
-            // linkname={pro}
+            src={`${product.src}${product.id}`}
+            linkname={`${product.linkname}${product.id}`}
           />
         </div>
       ))}

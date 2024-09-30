@@ -56,7 +56,7 @@ export default function Home() {
     name.toLowerCase().includes(inputValue.toLowerCase())
   );
   return (
-    <div className=" ">
+    <div className=" overflow-hidden">
       {/* <div className="body  ">
         <div
           className={`absolute inset-0 bg-black transition-all duration-700 ${

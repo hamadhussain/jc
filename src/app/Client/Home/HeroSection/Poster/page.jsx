@@ -47,8 +47,8 @@ const Poster = () => {
     //     </div>
     //   </div>
     // </div>
-<div className="text-white flex flex-col md:flex-row justify-center items-center w-full gap-10 md:gap-14 px-4 md:px-44">
-  <div className="post1 bg-cover bg-center relative text-white w-full md:w-1/3">
+<div className="text-white flex flex-col lg:flex-row justify-center items-center w-full gap-10 md:gap-14 px-4 md:px-44">
+  <div className="post1 bg-cover bg-center relative text-white w-full lg:w-1/3">
     <div className="absolute inset-0 bg-black bg-opacity-50"></div>
     <div className="relative space-y-4 p-4">
       <h1 className="text-2xl font-bold">20% Off On Tank Tops</h1>
@@ -59,7 +59,7 @@ const Poster = () => {
     </div>
   </div>
 
-  <div className="post2 bg-cover bg-center relative text-white w-full md:w-1/3">
+  <div className="post2 bg-cover bg-center relative text-white w-full lg:w-1/3">
     <div className="absolute inset-0 bg-black bg-opacity-50"></div>
     <div className="relative space-y-4 p-4">
       <h1 className="text-2xl font-bold">Latest Eyewear For You</h1>
@@ -70,7 +70,7 @@ const Poster = () => {
     </div>
   </div>
 
-  <div className="post3 bg-cover bg-center relative text-white w-full md:w-1/3">
+  <div className="post3 bg-cover bg-center relative text-white w-full lg:w-1/3">
     <div className="absolute inset-0 bg-black bg-opacity-50"></div>
     <div className="relative space-y-4 p-4">
       <h1 className="text-2xl font-bold">Let's Lorem Suit Up!</h1>
