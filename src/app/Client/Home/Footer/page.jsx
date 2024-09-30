@@ -258,7 +258,7 @@ import { PiLockLaminatedThin } from "react-icons/pi";
 const Footer = () => {
   return (
     <>
-      <section className=" flex space-x-5  bg-gray-100 text-black py-44 px-4">
+      {/* <section className=" flex space-x-5  bg-gray-100 text-black py-44 px-4">
         <div className=" space-y-5 flex justify-center items-center flex-col text-center">
           <h1 className=" text-5xl">
             <TiWorldOutline />
@@ -295,7 +295,45 @@ const Footer = () => {
             It elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
           </p>
         </div>
-      </section>
+      </section> */}
+<section className="flex flex-col md:flex-row space-y-10 md:space-y-0 md:space-x-5 bg-gray-100 text-black py-20 px-4">
+  <div className="flex justify-center items-center flex-col text-center">
+    <h1 className="text-5xl">
+      <TiWorldOutline />
+    </h1>
+    <h1 className="text-xl font-bold">Worldwide Shipping</h1>
+    <p className="text-sm md:text-base">
+      It elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
+    </p>
+  </div>
+  <div className="flex justify-center items-center flex-col text-center">
+    <h1 className="text-5xl">
+      <GiMonclerJacket />
+    </h1>
+    <h1 className="text-xl font-bold">Best Quality</h1>
+    <p className="text-sm md:text-base">
+      It elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
+    </p>
+  </div>
+  <div className="flex justify-center items-center flex-col text-center">
+    <h1 className="text-5xl">
+      <CiShoppingTag />
+    </h1>
+    <h1 className="text-xl font-bold">Best Offers</h1>
+    <p className="text-sm md:text-base">
+      It elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
+    </p>
+  </div>
+  <div className="flex justify-center items-center flex-col text-center">
+    <h1 className="text-5xl">
+      <PiLockLaminatedThin />
+    </h1>
+    <h1 className="text-xl font-bold">Secure Payments</h1>
+    <p className="text-sm md:text-base">
+      It elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
+    </p>
+  </div>
+</section>
 
       <footer className="bg-white text-gray-700 border-t border-gray-200 py-10">
         <div className="container mx-auto px-4 flex flex-col items-center">

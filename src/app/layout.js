@@ -1,10 +1,17 @@
 import localFont from "next/font/local";
 import "./globals.css";
-import { Roboto_Mono, Lobster, Lato, Fira_Sans } from "next/font/google";
+import { Roboto_Mono, Lobster, Lato, Fira_Sans,Barlow_Condensed,NTR } from "next/font/google";
 
 const roboto = Roboto_Mono({
   weight: [ "500"],
   style: ["normal", "italic"],
+  subsets: ["latin"],
+  display: "swap",
+});
+const barlow = NTR({
+  family: ["NTR", "sans-serif"],
+  weight: [ "400"],
+  style: ["normal"],
   subsets: ["latin"],
   display: "swap",
 });
@@ -46,7 +53,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-      className={roboto.className}
+      className={barlow.className}
         // className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         {children}

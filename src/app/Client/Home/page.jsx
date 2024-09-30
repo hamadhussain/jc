@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import HeroSection from "./HeroSection/page";
 import FeaturedCollections from "./ProductCard/page";
 import Footer from "./Footer/page";
@@ -7,17 +7,54 @@ import { GiSleevelessJacket } from "react-icons/gi";
 import Link from "next/link";
 import { FcAbout } from "react-icons/fc";
 import { GrContact } from "react-icons/gr";
-import { CiSearch } from "react-icons/ci";
 import Header from "./Header/page";
-
+import Navigation from "../../Client/Home/Navigation/page";
+import SheetDemo from "../AddCart/page";
+import Menu from "../Menu/page";
 export default function Home() {
   const [message, setMessage] = useState(false);
-
+  // const [inputValue, setInputValue] = useState("");
+  // const handleChange = (event) => {
+  //   setInputValue(event.target.value);
+  // };
   useEffect(() => {
     const timer = setTimeout(() => {
       setMessage(true);
     }, 1000);
   }, []);
+  const [inputValue, setInputValue] = useState("");
+  const [inputFocus, setFocus] = useState(false);
+  const dropdownRef = useRef(null);
+
+  const names = [
+    { name: "James", link: "/" },
+    { name: "John", link: "/john" },
+    { name: "Paul", link: "/paul" },
+    { name: "Ringo", link: "/ringo" },
+    { name: "George", link: "/george" },
+  ];
+
+  const handleChange = (event) => {
+    setInputValue(event.target.value);
+    setFocus(true);
+  };
+
+  const handleClickOutside = (event) => {
+    if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+      setFocus(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
+  const filteredNames = names.filter(({ name }) =>
+    name.toLowerCase().includes(inputValue.toLowerCase())
+  );
   return (
     <div className=" ">
       {/* <div className="body  ">
@@ -85,39 +122,85 @@ export default function Home() {
             message ? "bg-opacity-50" : "bg-opacity-10"
           }`}
         ></div>
-        <header className="flex backdrop-brightness-95 py-10 text-white z-20 bg-whte bg-fxed fied w-scree items-center justify-between px-6 border-gray-200">
-          <div className="gap-11 flex items-center">
-            <div className="flex items-center italic gap-1 text-3xl">
-              <GiSleevelessJacket className="border-4 rounded-full" />
-              <p className="companylogo italic">M.J</p>
+        <div className="lg:block hidden">
+          <header className="flex  backdrop-brightness-95 py-10 text-white z-20 bg-whte bg-fxed fied w-scree items-center justify-between px-6 border-gray-200">
+            <div className="gap-11 flex items-center">
+              <div className="flex items-center italic gap-1 text-3xl">
+                <GiSleevelessJacket className="border-4 rounded-full" />
+                <p className="companylogo italic">M.J</p>
+              </div>
+              <nav className="hidden md:flex space-x-12 uppercase">
+                <Navigation />{" "}
+                {/* <Link className=" transition-all duration-75 hover:opacity-85  border-0 hover:border-b-2" href="/Client/Men"> For Men</Link>
+              <Link className=" transition-all duration-75 hover:opacity-85  border-0 hover:border-b-2" href="/clothing"> For Women</Link> */}
+              </nav>
             </div>
-            <nav className="hidden md:flex space-x-12 uppercase">
-              <Link className=" transition-all duration-75 hover:opacity-85  border-0 hover:border-b-2" href="/jewelry"> For Men</Link>
-              <Link className=" transition-all duration-75 hover:opacity-85  border-0 hover:border-b-2" href="/clothing"> For Women</Link>
-            </nav>
-          </div>
 
-          <div className="flex items-center space-x-6">
-            <Link className="" href="/about">
-              <FcAbout className="text-4xl" />
-            </Link>
-            <Link className="" href="/contact">
-              <GrContact className="text-3xl" />
-            </Link>
-            <input
+            <div className="flex items-center space-x-6">
+              <Link className="" href="/about">
+                <FcAbout className="text-4xl" />
+              </Link>
+              <Link className="" href="/contact">
+                <GrContact className="text-3xl" />
+              </Link>
+              {/* <input
               type="text"
               placeholder="Search ..."
               className="w-full p-2 pl-3 rounded-md bg-white border-none focus:outline-none"
             />
-            <CiSearch className="text-6xl" />
-            <button
-              // onClick={onClick}
-              className="bg-blue-600 text-white font-bold py-2 px-4 rounded-lg shadow-md transition-transform transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-300"
-            >
-              Login
-            </button>
-          </div>
-        </header>
+             */}
+
+              <div className="flex items-center  gap-4 relative">
+                <Link href="/login">
+                  <button className="bg-blue-500 text-white p-2 rounded hover:bg-blue-600">
+                    Login
+                  </button>
+                </Link>
+                <input
+                  className="border border-gray-300 h-full p-2 rounded mr-2"
+                  id="textInput"
+                  type="text"
+                  value={inputValue}
+                  onChange={handleChange}
+                  placeholder="Search..."
+                  onFocus={() => setFocus(true)}
+                />
+                {inputFocus && inputValue && (
+                  <div
+                    ref={dropdownRef}
+                    className="absolute z-10 bg-white border border-gray-300 top-10 left-0 w-full"
+                  >
+                    {filteredNames.map(({ name, link }, index) => (
+                      <Link key={index} href={link}>
+                        <div
+                          className="p-2 hover:bg-gray-200 cursor-pointer"
+                          onClick={() => {
+                            setInputValue(name);
+                            setFocus(false);
+                          }}
+                        >
+                          {name}
+                        </div>
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
+              <SheetDemo />
+            </div>
+          </header>
+        </div>
+        <div className="lg:hidden block">
+          {" "}
+          <header className="flex  backdrop-brightness-95 py-10 text-white z-20 bg-whte bg-fxed fied w-scree items-center justify-between px-6 border-gray-200">
+            <div className="flex items-center italic gap-1 text-3xl">
+              <GiSleevelessJacket className="border-4 rounded-full" />
+              <p className="companylogo italic">M.J</p>
+            </div>
+            <Menu />
+          </header>
+        </div>
+
         <Header />
       </div>
 

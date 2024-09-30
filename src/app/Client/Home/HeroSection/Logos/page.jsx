@@ -30,8 +30,8 @@ const Logos = ({ slides, options }) => {
   
 
   return (
-    <section className="emblaa p-10 h-36 overflow-hidden">
-      <div className="embla__viewportt  imageslider " ref={emblaRef}>
+    <section className="emblaa p-10 h-36 overflow-hidden ">
+      <div className="embla__viewportt  imageslider" ref={emblaRef}>
         <div className="embla__containerr ">
           {slidess.map(({ id, src, alt }) => (
             <div className="embla__slidee" key={id}>
