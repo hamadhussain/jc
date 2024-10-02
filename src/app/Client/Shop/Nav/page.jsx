@@ -1,6 +1,9 @@
 "use client";
 import Link from "next/link";
 import { useState, useEffect, useRef } from "react";
+import SheetDemo from "../../AddCart/page";
+import CartMenu from "../../Menu/page";
+import { GiSleevelessJacket } from "react-icons/gi";
 
 const Navbar = () => {
   const [inputValue, setInputValue] = useState("");
@@ -12,7 +15,7 @@ const Navbar = () => {
     { name: "John", link: "/john" },
     { name: "Paul", link: "/paul" },
     { name: "Ringo", link: "/ringo" },
-    { name: "George", link: "/george" }
+    { name: "George", link: "/george" },
   ];
 
   const handleChange = (event) => {
@@ -38,79 +41,80 @@ const Navbar = () => {
   );
 
   return (
-    <nav className="flex justify-between items-center bg-white p-4 border-b border-gray-300">
-      <div className="flex items-center gap-5">
-        <h1 className="text-black text-xl font-bold">M.J</h1>
-        <Link href="/Client/Shop/Jackets">
-          <p className="uppercase hover:border-b-2 transition-all duration-700 border-0">Leather-Jackets</p>
-        </Link>
-        <Link href="/Client/Shop/Hoodies">
-          <p className="uppercase hover:border-b-2 transition-all duration-700 border-0">Hoodies</p>
-        </Link>
+    <>
+      <div className="hidden lg:block">
+        <nav className="flex  justify-between items-center bg-white p-4 border-b border-gray-300">
+          <div className="flex items-center gap-5">
+            <h1 className="text-black text-xl font-bold">M.J</h1>
+            <Link href="/Client/Shop/Jackets">
+              <p className="uppercase hover:border-b-2 transition-all duration-700 border-0">
+                Leather-Jackets
+              </p>
+            </Link>
+            <Link href="/Client/Shop/Hoodies">
+              <p className="uppercase hover:border-b-2 transition-all duration-700 border-0">
+                Hoodies
+              </p>
+            </Link>
+          </div>
+
+          <div className="flex items-center  gap-4 relative">
+            <Link href="/login">
+              <button className="bg-blue-500 text-white p-2 rounded hover:bg-blue-600">
+                Login
+              </button>
+            </Link>
+            <input
+              className="border border-gray-300 h-10 p-2 rounded mr-2"
+              id="textInput"
+              type="text"
+              value={inputValue}
+              onChange={handleChange}
+              placeholder="Search..."
+              onFocus={() => setFocus(true)}
+            />
+            {inputFocus && inputValue && (
+              <div
+                ref={dropdownRef}
+                className="absolute z-10 bg-white border border-gray-300 top-10 left-0 w-full"
+              >
+                {filteredNames.map(({ name, link }, index) => (
+                  <Link key={index} href={link}>
+                    <div
+                      className="p-2 hover:bg-gray-200 cursor-pointer"
+                      onClick={() => {
+                        setInputValue(name);
+                        setFocus(false);
+                      }}
+                    >
+                      {name}
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            )}
+          </div>
+        </nav>
       </div>
 
-      <div className="flex items-center  gap-4 relative">
-        <Link href="/login">
-          <button className="bg-blue-500 text-white p-2 rounded hover:bg-blue-600">Login</button>
-        </Link>
-        <input
-          className="border border-gray-300 h-full p-2 rounded mr-2"
-          id="textInput"
-          type="text"
-          value={inputValue}
-          onChange={handleChange}
-          placeholder="Search..."
-          onFocus={() => setFocus(true)}
-        />
-        {inputFocus && inputValue && (
-          <div ref={dropdownRef} className="absolute z-10 bg-white border border-gray-300 top-10 left-0 w-full">
-            {filteredNames.map(({ name, link }, index) => (
-              <Link key={index} href={link}>
-                <div
-                  className="p-2 hover:bg-gray-200 cursor-pointer"
-                  onClick={() => {
-                    setInputValue(name);
-                    setFocus(false);
-                  }}
-                >
-                  {name}
-                </div>
-              </Link>
-            ))}
+      <div className="lg:hidden block">
+        {" "}
+        <header className="flex  backdrop-brightness-95 py-10 text-black z-20 bg-white bg-fxed fied w-scree items-center justify-between px-6 border-gray-200">
+          <div className="flex items-center italic gap-1 text-3xl">
+            <GiSleevelessJacket className="border-4 rounded-full" />
+            <p className="companylogo italic">M.J</p>
           </div>
-        )}
+          <div className=" flex items-center gap-4 text-black">
+            <SheetDemo />
+            <CartMenu />
+          </div>
+        </header>
       </div>
-    </nav>
+    </>
   );
 };
 
 export default Navbar;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // "use client";
 // import Link from "next/link";
@@ -191,19 +195,6 @@ export default Navbar;
 
 // export default Navbar;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 // // "use client";
 // // import Link from "next/link";
 // // import { useState } from "react";
@@ -248,7 +239,7 @@ export default Navbar;
 // //               value={inputValue}
 // //               onChange={handleChange}
 // //               placeholder="Search..."
-              
+
 // //             />
 // //             {inputValue && (
 // //               <div className="relative z-10 bg-white border border-gray-300 top-32 -left-56 w-full">
@@ -274,21 +265,6 @@ export default Navbar;
 // // };
 
 // // export default Navbar;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // // // // // // "use client";
 // // // // // // // // // // import Link from 'next/link';
@@ -740,7 +716,7 @@ export default Navbar;
 // // //             onChange={handleChange}
 // // //             placeholder="Search..."
 // // //             // onFocus={handleFocus}
-// // //             // onBlur={handleBlur}  
+// // //             // onBlur={handleBlur}
 // // //           />
 // // //           { filteredNames.length > 0 && (
 // // //             <div className="relative z-10 bg-white border border-gray-300 mt-1 w-full">
@@ -941,22 +917,6 @@ export default Navbar;
 
 // // // // // // export default SearchFilter;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // // // 'use client'
 
 // // // const { useState } = require("react")
@@ -1017,33 +977,6 @@ export default Navbar;
 
 // // // export default Navbar;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // // // "use client";
 // // // import Link from "next/link";
 // // // import { useState } from "react";
@@ -1052,7 +985,7 @@ export default Navbar;
 // // //   const [inputValue, setInputValue] = useState("");
 // // //   const [inputFocus, setFocus] = useState(false);
 // // //   const [selectedItems, setSelectedItems] = useState([]);
-  
+
 // // //   const filteredNames = ["James", "John", "Paul", "Ringo", "George"];
 
 // // //   const handleChange = (event) => {

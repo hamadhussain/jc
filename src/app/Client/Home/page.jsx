@@ -7,10 +7,11 @@ import { GiSleevelessJacket } from "react-icons/gi";
 import Link from "next/link";
 import { FcAbout } from "react-icons/fc";
 import { GrContact } from "react-icons/gr";
-import Header from "./Header/page";
 import Navigation from "../../Client/Home/Navigation/page";
 import SheetDemo from "../AddCart/page";
 import Menu from "../Menu/page";
+import { Link as LInkk } from "react-scroll";
+
 export default function Home() {
   const [message, setMessage] = useState(false);
   // const [inputValue, setInputValue] = useState("");
@@ -137,12 +138,12 @@ export default function Home() {
             </div>
 
             <div className="flex items-center space-x-6">
-              <Link className="" href="/about">
+              {/* <Link className="" href="/about">
                 <FcAbout className="text-4xl" />
               </Link>
               <Link className="" href="/contact">
                 <GrContact className="text-3xl" />
-              </Link>
+              </Link> */}
               {/* <input
               type="text"
               placeholder="Search ..."
@@ -157,7 +158,7 @@ export default function Home() {
                   </button>
                 </Link>
                 <input
-                  className="border border-gray-300 h-full p-2 rounded mr-2"
+                  className="border border-gray-300 h-10 p-2 rounded mr-2"
                   id="textInput"
                   type="text"
                   value={inputValue}
@@ -186,7 +187,7 @@ export default function Home() {
                   </div>
                 )}
               </div>
-              <SheetDemo />
+              <SheetDemo color={"white"} />
             </div>
           </header>
         </div>
@@ -198,17 +199,46 @@ export default function Home() {
               <p className="companylogo italic">M.J</p>
             </div>
             <div className=" flex items-center gap-4">
-            <SheetDemo/>
-            <Menu /></div>
+              <SheetDemo color={"white"} />
+              <Menu color={"white"} />
+            </div>
           </header>
         </div>
-
-        <Header />
+        <div className="h-screen overflow-hidden text-white flex flex-col brightness-200 relative px-4 lg:px-36 space-y-4 items-cener justify-center">
+          <h1 className="text-4xl md:text-7xl lg:text-8xl w-full md:w-[700px] font-bold mb-4 leading-relaxed text-center md:text-start">
+            Raining Offers For Winter!
+          </h1>
+          <p className="text-2xl md:text-3xl mb-4 text-center md:text-start">
+            25% Off On All Products
+          </p>
+          <div className="flex items-center flex-col md:flex-row space-x-0 md:space-x-4 space-y-4 md:space-y-0">
+            <Link href="/Client/Shop">
+              <button className="bg-white font-extrabold text-black w-fit px-5 py-2 rouned-lg">
+                Shop Now
+              </button>
+            </Link>
+            <LInkk
+              activeClass="active"
+              to="target"
+              spy={true}
+              smooth={true}
+              offset={50}
+            >
+              {" "}
+              <button className="text-white border-white w-fit px-5 py-2 rouded-lg bg-transparent border">
+                Explore Now
+              </button>
+            </LInkk>
+          </div>
+        </div>
       </div>
 
-      <div className=" bg-slate-50 z-10">
+      <div className="  z-10">
         <HeroSection />
-        <FeaturedCollections />
+        <div name="target">
+          {" "}
+          <FeaturedCollections />
+        </div>
         <Footer />
       </div>
     </div>

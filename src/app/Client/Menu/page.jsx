@@ -1,74 +1,4 @@
-// import { Button } from "@/components/ui/button"
-// import { Input } from "@/components/ui/input"
-// import { Label } from "@/components/ui/label"
-// import {
-//   Sheet,
-//   SheetClose,
-//   SheetContent,
-//   SheetDescription,
-//   SheetFooter,
-//   SheetHeader,
-//   SheetTitle,
-//   SheetTrigger,
-// } from "@/components/ui/sheet"
-import { IoMenuOutline } from "react-icons/io5";
-
-// export default function Menu() {
-//   return (
-//     <Sheet >
-//       <SheetTrigger asChild>
-//         <Button variant="outline" className=" text-white hover:text-white bg- border-none bg-transparent hover:bg-transparent text-4xl"><IoMenuOutline />
-//         </Button>
-//       </SheetTrigger>
-//       <SheetContent>
-//         <SheetHeader>
-//           <SheetTitle>Edit profile</SheetTitle>
-//           <SheetDescription>
-//             Make changes to your profile here. Click save when you're done.
-//           </SheetDescription>
-//         </SheetHeader>
-//         <div className="grid gap-4 py-4">
-//           <div className="grid grid-cols-4 items-center gap-4">
-//             <Label htmlFor="name" className="text-right">
-//               Name
-//             </Label>
-//             <Input id="name" value="Pedro Duarte" className="col-span-3" />
-//           </div>
-//           <div className="grid grid-cols-4 items-center gap-4">
-//             <Label htmlFor="username" className="text-right">
-//               Username
-//             </Label>
-//             <Input id="username" value="@peduarte" className="col-span-3" />
-//           </div>
-//         </div>
-//         <SheetFooter>
-//           <SheetClose asChild>
-//             <Button type="submit">Save changes</Button>
-//           </SheetClose>
-//         </SheetFooter>
-//       </SheetContent>
-//     </Sheet>
-//   )
-// }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-import { Button } from "@/components/ui/button"
-import { Label } from "@/components/ui/label"
+import { Button } from "@/components/ui/button";
 import {
   Sheet,
   SheetClose,
@@ -78,45 +8,78 @@ import {
   SheetHeader,
   SheetTitle,
   SheetTrigger,
-} from "@/components/ui/sheet"
-import { IoCartOutline } from "react-icons/io5"
+} from "@/components/ui/sheet";
+import { IoMenuOutline, IoLogIn } from "react-icons/io5";
+import Link from "next/link";
 
-const products = [
-  { id: 1, name: "Product 1", price: "$10.00" },
-  { id: 2, name: "Product 2", price: "$20.00" },
-  { id: 3, name: "Product 3", price: "$15.00" },
-]
-
-export default function CartMenu() {
+export default function Menu({ color }) {
   return (
     <Sheet>
       <SheetTrigger asChild>
-        <Button variant="outline" className="text-white border-none hover:text-white bg-transparent hover:bg-transparent text-4xl">
+        <Button
+          variant="outline"
+          className={`
+            text-${color} 
+            hover:text-${color} 
+            border-none 
+            hover:border-none 
+            bg-transparent 
+            hover:bg-transparent 
+            text-5xl 
+            sm:text-4xl 
+            md:text-3xl 
+            lg:text-2xl 
+            xl:text-xl
+            hover:scale-105
+           transition-all
+            duration-150
+          `}   >
           <IoMenuOutline />
         </Button>
       </SheetTrigger>
       <SheetContent>
         <SheetHeader>
-          <SheetTitle>Your Cart</SheetTitle>
+          <SheetTitle>Online Store</SheetTitle>
           <SheetDescription>
-            Review your selected items before proceeding to checkout.
-          </SheetDescription>
+          Discover our premium collection of jackets and hoodies, designed for style and comfort. Our website offers a curated selection of high-quality outerwear that blends fashion with functionality. Shop now for versatile pieces perfect for any occasion, and enjoy seamless navigation, secure shopping, and fast shipping. Elevate your wardrobe with our timeless designs.          </SheetDescription>
         </SheetHeader>
         <div className="grid gap-4 py-4">
-          {products.map(product => (
-            <div key={product.id} className="grid grid-cols-4 items-center gap-4">
-              <Label className="text-right">{product.name}</Label>
-              <span className="col-span-2">{product.price}</span>
-              <Button variant="outline" className="col-span-1">Remove</Button>
-            </div>
-          ))}
+          <div className="flex items-center bg-sky-400 text-white rounded-sm justify-center gap-2">
+            {/* <IoLogIn className="text-xl" /> */}
+            <Link href="/login">
+              <Button variant="none" className="text-white capitalize">
+                Login
+              </Button>
+            </Link>
+          </div>
+          <Link
+            href="/Client/Menu/Terms&Policies"
+            className="text
+          blue-600 hover:border-b-2 py-3 w-fit"
+          >
+            Terms and Privacy Policy
+          </Link>
+          <Link
+            href="/jackets"
+            className="tex
+          -blue-600 hover:border-b-2 py-3 w-fit"
+          >
+            Jackets
+          </Link>
+          <Link
+            href="/hoodies"
+            className="text
+          blue-600 hover:border-b-2 py-3 w-fit"
+          >
+            Hoodies
+          </Link>
         </div>
         <SheetFooter>
           <SheetClose asChild>
-            <Button type="button">Proceed to Checkout</Button>
+            <Button type="button">Close</Button>
           </SheetClose>
         </SheetFooter>
       </SheetContent>
     </Sheet>
-  )
+  );
 }

@@ -22,7 +22,7 @@ const product = [
 ];
 
 const FeaturedCollections = () => (
-  <section className="p-4 flex justify-center flex-col items-center space-y-4 py-24 bg-slate-100">
+  <section className="p-4 flex justify-center flex-col items-center space-y-4 py-24 bg-slate-">
     <h2 className="text-2xl font-bold mb-4 text-center w-fit py-3 border-b-4  border-blue-300 ">
       Featured Collections
     </h2>
