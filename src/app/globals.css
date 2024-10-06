@@ -84,6 +84,12 @@ h1,button{
   
 }
 
+
+.g{
+  background-image: linear-gradient(-20deg, #e9defa 0%, #fbfcdb 100%);
+}
+
+
 .emblaa {
   /* max-width: 48rem; */
   margin: auto;

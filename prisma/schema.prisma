@@ -127,7 +127,7 @@ model Product {
   description String
   price       Float
   category    String    // e.g., "jacket", "hoodie"
-  images      String[]  // URLs or paths to product images
+  images      String  // URLs or paths to product images
   stock       Int       // Quantity available
   orders      OrderProduct[] // Relation to OrderProduct
 }
