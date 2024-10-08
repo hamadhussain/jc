@@ -16,7 +16,7 @@ const Hoodies = () => (
     <h2 className="text-2xl font-bold  text-center w-fit py-3 border-b-4  border-blue-300 ">
        Hoodies  Collections
     </h2>
-    <div className="grid gap-0 grid-cols-1 xl:grid-cols-2 2xl:grid-cols-3">
+    <div className="grid gap-0 grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3">
       {product.map((product) => (
         <div key={product.id}>
           <ProductCard

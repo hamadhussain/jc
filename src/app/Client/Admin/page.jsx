@@ -9,6 +9,31 @@ const ProductForm = () => {
   const [images, setImages] = useState("");
   const [stock, setStock] = useState("");
 
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+  //   const productData = {
+  //     name,
+  //     description,
+  //     price: parseFloat(price),
+  //     category,
+  //     stock: parseInt(stock, 10),
+  //     images,
+  //   };
+
+  //   const response = await fetch("/Server/Admin", {
+  //     method: "POST",
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //     },
+  //     body: JSON.stringify(productData),
+  //   });
+
+  //   if (response.ok) {
+  //     alert("Product created successfully!");
+  //   } else {
+  //     alert("Error creating product.");
+  //   }
+  // };
   const handleSubmit = async (e) => {
     e.preventDefault();
     const productData = {
@@ -17,9 +42,9 @@ const ProductForm = () => {
       price: parseFloat(price),
       category,
       stock: parseInt(stock, 10),
-      images,
+      images: images.trim(), // Just make sure to trim any whitespace
     };
-
+  
     const response = await fetch("/Server/Admin", {
       method: "POST",
       headers: {
@@ -27,14 +52,14 @@ const ProductForm = () => {
       },
       body: JSON.stringify(productData),
     });
-
+  
     if (response.ok) {
       alert("Product created successfully!");
     } else {
       alert("Error creating product.");
     }
   };
-
+  
   return (
     <div className="h-screen g flex justify-center items-center flex-col mx-6 md:mx-4">
       <div className="max-w-lg  w-full border-t-2 -black bg-white rounded-lg shadow-md p-4">

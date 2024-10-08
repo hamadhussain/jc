@@ -95,8 +95,11 @@ export default function SheetDemo({ color }) {
   //   }
   // };
 // }, []);
-const handleSubmit = async () => {
+
+
+const handleRemove = async () => {
   try {
+ 
     const response = await fetch("/Server/ProductCard", {
       method: "POST",
       headers: {
@@ -104,6 +107,23 @@ const handleSubmit = async () => {
       },
       body: JSON.stringify({ greeting: "Hello" }),
     });
+    if (response.ok) {
+      const data = await response.json();
+      // setMessage(data.message);
+      console.log(data.message);
+      
+    } else {
+      console.error("Error fetching message");
+    }
+  } catch (error) {
+    console.error("Error:", error);
+  }
+};
+
+const handleSubmit = async () => {
+  try {
+ 
+    const response = await fetch("/Server/ProductCard");
 
     if (response.ok) {
       const data = await response.json();

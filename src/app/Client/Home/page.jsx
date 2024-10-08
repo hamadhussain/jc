@@ -212,12 +212,7 @@ export default function Home() {
             25% Off On All Products
           </p>
           <div className="flex items-center flex-col md:flex-row space-x-0 md:space-x-4 space-y-4 md:space-y-0">
-            <Link href="/Client/Shop">
-              <button className="bg-white font-extrabold text-black w-fit px-5 py-2 rouned-lg">
-                Shop Now
-              </button>
-            </Link>
-            <LInkk
+          <LInkk
               activeClass="active"
               to="target"
               spy={true}
@@ -228,7 +223,12 @@ export default function Home() {
               <button className="text-white border-white w-fit px-5 py-2 rouded-lg bg-transparent border">
                 Explore Now
               </button>
-            </LInkk>
+            </LInkk> <Link href="/Client/Shop">
+              <button className="bg-white font-extrabold text-black w-fit px-5 py-2 rouned-lg">
+                Shop Now
+              </button>
+            </Link>
+            
           </div>
         </div>
       </div>

@@ -44,8 +44,9 @@ const Navbar = () => {
     <>
       <div className="hidden lg:block">
         <nav className="flex  justify-between items-center bg-white p-4 border-b border-gray-300">
-          <div className="flex items-center gap-5">
-            <h1 className="text-black text-xl font-bold">M.J</h1>
+          <div className="flex items-center gap-5">            
+            <Link href="/">
+            <h1 className="text-black text-xl font-bold">M.J</h1></Link>
             <Link href="/Client/Shop/Jackets">
               <p className="uppercase hover:border-b-2 transition-all duration-700 border-0">
                 Leather-Jackets
@@ -100,10 +101,11 @@ const Navbar = () => {
       <div className="lg:hidden block">
         {" "}
         <header className="flex  backdrop-brightness-95 py-10 text-black z-20 bg-white bg-fxed fied w-scree items-center justify-between px-6 border-gray-200">
-          <div className="flex items-center italic gap-1 text-3xl">
+          
+          <Link href="/"><div className="flex items-center italic gap-1 text-3xl">
             <GiSleevelessJacket className="border-4 rounded-full" />
             <p className="companylogo italic">M.J</p>
-          </div>
+          </div></Link>
           <div className=" flex items-center gap-4 text-black">
             <SheetDemo />
             <CartMenu />
