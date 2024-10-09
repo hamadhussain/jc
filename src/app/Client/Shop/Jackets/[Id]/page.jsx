@@ -1,11 +1,11 @@
 "use client";
-
+import Image from "next/image";
 import React, { useState, useEffect } from "react";
 
 const Jacket = ({ params }) => {
   const [quantity, setQuantity] = useState(1);
-  const [size, setSize] = useState("Medium"); 
-  const [product, setProduct] = useState(null); 
+  const [size, setSize] = useState("Medium");
+  const [product, setProduct] = useState(null);
 
   useEffect(() => {
     const fetchProductDetails = async () => {
@@ -15,17 +15,17 @@ const Jacket = ({ params }) => {
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({ imagname: `${params.Id}` }), 
+          body: JSON.stringify({ imagname: `${params.Id}` }),
         });
 
         if (!response.ok) {
-          throw new Error('Network response was not ok');
+          throw new Error("Network response was not ok");
         }
 
         const data = await response.json();
-        setProduct(data); 
+        setProduct(data);
       } catch (error) {
-        console.error('Error fetching product details:', error);
+        console.error("Error fetching product details:", error);
       }
     };
 
@@ -53,17 +53,25 @@ const Jacket = ({ params }) => {
   return (
     <div className="h-full md:h-screen flex justify-center items-center  left-1/2 top-1/2 w-full">
       <div className="flex flex-col md:flex-row relative top-44 md:top-8 justify-center items-center w-scren gap-7 md:gap-10 lg:gap-24">
-        <img
+        {/* <img
           src={`/${params.Id}.png`}
           alt={`Jacket`}
           className="w-full max-w-xs md:max-w-md lg:max-w-lg rounded-lg "
+        /> */}
+        <Image
+          src={`/${params.Id}.png`}
+          alt={`Jacket`}
+          width={500} // specify width
+          height={500} // specify height
+          className="w-full max-w-xs md:max-w-md lg:max-w-lg rounded-lg"
         />
         <div className="ml-8 py-4 flex flex-col justify-center w-96">
           {product ? (
             <>
               <h1 className="text-2xl font-bold mb-2">{product.name}</h1>
               <h2 className="text-md mb-4">
-                Price: <span className="underline">${product.price.toFixed(2)}</span>
+                Price:{" "}
+                <span className="underline">${product.price.toFixed(2)}</span>
               </h2>
               <p className="mb-4">{product.description}</p>
             </>
@@ -113,34 +121,6 @@ const Jacket = ({ params }) => {
 };
 
 export default Jacket;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // "use client";
 
