@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import Buttonn from "../../AddCartButton/page";
 
 const Jacket = ({ params }) => {
   const [quantity, setQuantity] = useState(1);
@@ -99,13 +100,8 @@ const Jacket = ({ params }) => {
             >
               +
             </button>
+            <Buttonn />
           </div>
-          <button
-            onClick={handleAddToCart}
-            className="bg-blue-500 text-white py-2 px-4 rounded"
-          >
-            Add to Cart
-          </button>
         </div>
       </div>
     </div>

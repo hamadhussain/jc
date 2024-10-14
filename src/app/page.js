@@ -6,7 +6,7 @@ import Page from "./Client/Home/page";
 export default function Home() {
   return (
     <>
-      <Page />
+      <Page />sdds
     </>
   );
 }
